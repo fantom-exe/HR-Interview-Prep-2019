@@ -12,21 +12,26 @@ public class SockMerchant {
 	
 	// Complete the sockMerchant function below.
 	static int sockMerchant(int n, int[] ar) {
-		ArrayList alist = new ArrayList();
-		int index = 0, sock = 0, pairs = 0;
-		
-		do {
-			alist.add(ar[index]);
-		} while(index < n);
-		
-		for(int i = 0; i < ar.length; i++) {
+		ArrayList colorVariations = new ArrayList();
+		int socks = 0, color, pairs = 0;
+
+		// find possible color variations
+		for(int i = 0; i < n; i++, socks = 0) {
+			color = ar[i];
 			
-			for(int j = i+1; j < ar.length-1; j++) {
+			// check if color pair already counted
+			if(!colorVariations.contains(color)) {
+				colorVariations.add(color);
 				
-				if(alist.contains(ar[i])) {
-					pairs++;
+				for(int j = i; j < n; j++) {
+					if(color == ar[j]) {
+						socks++;
+					}
 				}
+				
+				pairs += socks / 2;
 			}
+			
 		}
 		
 		return pairs;
