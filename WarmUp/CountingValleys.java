@@ -12,18 +12,27 @@ import java.util.regex.*;
 public class CountingValleys {
 	// Complete the countingValleys function below.
 	static int countingValleys(int n, String s) {
-		int valleys = 0, seaLevel = 0;
+		int valleys = 0, altitude = 0;
+		boolean isValley = false;
 		
 		while(n >= 0) {
-			
-			if(s.charAt(Math.abs(1-n)) == 'U') { // reading string backwards using n as index
-				seaLevel++;
+			// reading string backwards using n as index
+			if(s.charAt(Math.abs(1-n)) == 'U') { // possible mountain
+				if(altitude == 0) {
+					isValley = false;
+				}
+				
+				altitude++;
 			}
-			else {
-				seaLevel--;
+			else { // possible valley
+				if(altitude == 0) {
+					isValley = true;
+				}
+				
+				altitude--;
 			}
 			
-			if(seaLevel == 0) {
+			if(isValley && altitude == 0) {
 				valleys++;
 			}
 			
