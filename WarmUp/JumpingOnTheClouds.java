@@ -18,17 +18,18 @@ public class JumpingOnTheClouds {
 		for(int i = 0; i < c.length;) {
 			
 			if(c[i] == 0) {
-				if(c[i+1] == 0) {
-					jumps+=2;
+				if(i+1 < c.length && c[i+1] == 0) {
+					jumps+=1;
 					i+=2;
 				}
 				else {
 					jumps+=1;
+					i+=1;
 				}
 			}
 			else {
 				jumps+=2;
-				i++;
+				i+=1;
 			}
 			
 		}
