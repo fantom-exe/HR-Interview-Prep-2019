@@ -17,9 +17,6 @@ public class JumpingOnTheClouds {
 		
 		for(int i = 0; i < c.length;) {
 			// i = position
-//			if(c[i] == 0 && i == c.length - 1) { // ... 0
-//
-//			}
 			if(c[i] == 0) { // ... 0 ...
 				if(i+1 == c.length) { // ... 0
 					break;
