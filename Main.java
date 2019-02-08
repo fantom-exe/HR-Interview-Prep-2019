@@ -7,8 +7,8 @@ public class Main {
     
     public static void main(String[] args) throws IOException {
         String[] strArgs = new String[0];
-        
-        JumpingOnTheClouds.main(strArgs);
+    
+        RepeatedString.main(strArgs);
         
     }
     
