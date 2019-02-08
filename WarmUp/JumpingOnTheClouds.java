@@ -16,32 +16,21 @@ public class JumpingOnTheClouds {
 		int jumps = 0;
 		
 		for(int i = 0; i < c.length - 1;) {
-			// i = position
-//			if(c[i] == 0) { // ... 0 ...
-//				if(i+1 == c.length) { // ... 0
-//					break;
-//				}
-				
-				if(c[i+1] == 0) { // ... 0 0 ...
-					if(i+2 < c.length && c[i+2] == 0) { // ... 0 0 0 ...
-						jumps+=1;
-						i+=2;
-					}
-					else { // ... 0 0 1 ... or ... 0 0
-						jumps+=1;
-						i+=1;
-					}
-				}
-				else { // ... 0 1 ...
+			
+			if(c[i+1] == 0) { // ... 0 0 ...
+				if(i+2 < c.length && c[i+2] == 0) { // ... 0 0 0 ...
 					jumps+=1;
 					i+=2;
 				}
-//			}
-//			else { // ... 1 ...
-//				jumps+=1;
-//				i+=1;
-//				System.out.println("DAMN!");
-//			}
+				else { // ... 0 0 1 ... or ... 0 0
+					jumps+=1;
+					i+=1;
+				}
+			}
+			else { // ... 0 1 ...
+				jumps+=1;
+				i+=2;
+			}
 		
 		}
 	
