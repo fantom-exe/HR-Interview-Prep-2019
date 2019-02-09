@@ -13,7 +13,11 @@ public class RepeatedString {
 	
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
-	
+		long repeats = 0;
+		
+		
+		
+		return repeats;
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
