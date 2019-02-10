@@ -26,12 +26,10 @@ public class RepeatedString {
 		
 		final long NUM_OF_A_IN_S = counter; // number of letter a's in string s
 		
-		long numOfA = 0; // number of letter a's in the first n letters of the repeated string
+		// calculate number of letter a's in the first n letters of the repeated string
+		long numOfA;
 		
-		// calculate repeats of 'a'
 		if(N_MOD_A != 0) {
-			// n - n % LENGTH_OF_S
-			
 			// reset counter
 			counter = 0;
 			
@@ -47,8 +45,6 @@ public class RepeatedString {
 		else {
 			numOfA = n * NUM_OF_A_IN_S / LENGTH_OF_S;
 		}
-		
-		System.out.println(9 * 2/3);
 		
 		return numOfA;
 	}
