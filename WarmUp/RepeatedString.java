@@ -30,10 +30,21 @@ public class RepeatedString {
 		
 		// calculate repeats of 'a'
 		if(N_MOD_A != 0) {
+			// n - n % LENGTH_OF_S
 			
+			// reset counter
+			counter = 0;
+			
+			// count number of 'a' in substring s
+			for(int i = 0; i < Math.min(LENGTH_OF_S, N_MOD_A); i++) {
+				if(s.charAt(i) == 'a') {
+					counter++;
+				}
+			}
+			
+			numOfA = counter + n * NUM_OF_A_IN_S / LENGTH_OF_S;
 		}
 		else {
-			// n - n % LENGTH_OF_S
 			numOfA = n * NUM_OF_A_IN_S / LENGTH_OF_S;
 		}
 		
