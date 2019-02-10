@@ -14,8 +14,8 @@ public class RepeatedString {
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
 		final long  LENGTH_OF_S = s.length(),
-					N_MOD_A     = n % s.length();
-		int         counter = 0;
+					N_MOD_A     = n % LENGTH_OF_S;
+		int         counter     = 0;
 		
 		// count number of 'a' in string s
 		for(int i = 0; i < LENGTH_OF_S; i++) {
@@ -24,23 +24,30 @@ public class RepeatedString {
 			}
 		}
 		
-		final long NUM_OF_A_IN_S = counter; // number of letter a's in string s
+		final long NUM_OF_A_IN_S = counter;
 		
-		// calculate number of letter a's in the first n letters of the repeated string
-		long numOfA;
+		System.out.println(Math.max(LENGTH_OF_S, N_MOD_A));
+		
+		// calculate number of letter 'a' in the first n letters of the repeated string
+		long numOfA = 0;
 		
 		if(N_MOD_A != 0) {
-			// reset counter
-			counter = 0;
+			String newStr = s;
 			
-			// count number of 'a' in substring s
-			for(int i = 0; i < Math.min(LENGTH_OF_S, N_MOD_A); i++) {
-				if(s.charAt(i) == 'a') {
-					counter++;
+			if(LENGTH_OF_S < N_MOD_A) { // multiply size of s and copy to newStr
+				for(int i = 0; i < (1 + N_MOD_A / LENGTH_OF_S); i++) {
+					newStr += s;
 				}
 			}
 			
-			numOfA = counter + n * NUM_OF_A_IN_S / LENGTH_OF_S;
+			// count number of 'a' in newStr
+			for(int i = 0; i < N_MOD_A; i++) {
+				if(newStr.charAt(i) == 'a') {
+					numOfA++;
+				}
+			}
+			
+			numOfA = numOfA + n * NUM_OF_A_IN_S / LENGTH_OF_S;
 		}
 		else {
 			numOfA = n * NUM_OF_A_IN_S / LENGTH_OF_S;
