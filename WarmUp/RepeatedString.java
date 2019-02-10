@@ -26,8 +26,6 @@ public class RepeatedString {
 		
 		final long NUM_OF_A_IN_S = counter;
 		
-		System.out.println(Math.max(LENGTH_OF_S, N_MOD_A));
-		
 		// calculate number of letter 'a' in the first n letters of the repeated string
 		long numOfA = 0;
 		
@@ -38,6 +36,7 @@ public class RepeatedString {
 				for(int i = 0; i < (1 + N_MOD_A / LENGTH_OF_S); i++) {
 					newStr += s;
 				}
+				System.out.println("YO");
 			}
 			
 			// count number of 'a' in newStr
