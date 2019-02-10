@@ -30,18 +30,18 @@ public class RepeatedString {
 		long numOfA = 0;
 		
 		if(N_MOD_A != 0) {
-			String newStr = s;
-			
-			if(LENGTH_OF_S < N_MOD_A) { // multiply size of s and copy to newStr
-				for(int i = 0; i < (1 + N_MOD_A / LENGTH_OF_S); i++) {
-					newStr += s;
-				}
-				System.out.println("YO");
-			}
+//			String newStr = s;
+
+//			if(LENGTH_OF_S < N_MOD_A) { // multiply size of s and copy to newStr
+//				for(int i = 0; i < (1 + N_MOD_A / LENGTH_OF_S); i++) {
+//					newStr += s;
+//				}
+//				System.out.println("YO");
+//			}
 			
 			// count number of 'a' in newStr
 			for(int i = 0; i < N_MOD_A; i++) {
-				if(newStr.charAt(i) == 'a') {
+				if(s.charAt(i) == 'a') {
 					numOfA++;
 				}
 			}
