@@ -13,53 +13,40 @@ public class RepeatedString {
 	
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
-		final long  LENGTH_OF_S = s.length();           // 3
-		int         counter     = 0;
-		long        n_mod_s;
-		
-		if(n > LENGTH_OF_S) {
-			n_mod_s = n % LENGTH_OF_S;
-		}
-		else {
-			n_mod_s = 0;
-		}
+		final long  LENGTH_OF_S = s.length();
+		long        n_mod_s, numOfa = 0;
 		
 		// count number of 'a' in string s
 		for(int i = 0; i < LENGTH_OF_S; i++) {
 			if(s.charAt(i) == 'a') {
-				counter++;
+				numOfa++;
 			}
 		}
 		
-		final long NUM_OF_A_IN_S = counter;
+		// 
+		if(n > LENGTH_OF_S) {
+			n_mod_s = n % LENGTH_OF_S;
+		}
+		else {
+			return numOfa;
+		}
 		
-		// calculate number of letter 'a' in the first n letters of the repeated string
-		long numOfA = 0;
-		
+		//
 		if(n_mod_s != 0) {
-//			String newStr = s;
-
-//			if(LENGTH_OF_S < N_MOD_S) { // multiply size of s and copy to newStr
-//				for(int i = 0; i < (1 + N_MOD_S / LENGTH_OF_S); i++) {
-//					newStr += s;
-//				}
-//				System.out.println("YO");
-//			}
-			
 			// count number of 'a' in newStr
 			for(int i = 0; i < n_mod_s; i++) {
 				if(s.charAt(i) == 'a') {
-					numOfA++;
+					numOfa++;
 				}
 			}
 			
-			numOfA = numOfA + n * NUM_OF_A_IN_S / LENGTH_OF_S;
+			numOfa = numOfa + n * numOfa / LENGTH_OF_S;
 		}
 		else {
-			numOfA = n * NUM_OF_A_IN_S / LENGTH_OF_S;
+			numOfa = n * numOfa / LENGTH_OF_S;
 		}
 		
-		return numOfA;
+		return numOfa;
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
