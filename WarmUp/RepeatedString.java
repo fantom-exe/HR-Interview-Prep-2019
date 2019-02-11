@@ -23,12 +23,11 @@ public class RepeatedString {
 			}
 		}
 		
-		// 
-		if(n > LENGTH_OF_S) {
-			n_mod_s = n % LENGTH_OF_S;
-		}
-		else {
+		if(n < LENGTH_OF_S) { // return already counted number of 'a' in s
 			return numOfa;
+		}
+		else { // continue ...
+			n_mod_s = n % LENGTH_OF_S;
 		}
 		
 		//
