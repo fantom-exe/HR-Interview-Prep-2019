@@ -14,7 +14,7 @@ public class RepeatedString {
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
 		final long  LENGTH_OF_S = s.length();
-		long        n_mod_s, numOfa = 0;
+		long        numOfa = 0, n_mod_s;
 		
 		// count number of 'a' in string s
 		for(int i = 0; i < LENGTH_OF_S; i++) {
@@ -23,27 +23,23 @@ public class RepeatedString {
 			}
 		}
 		
-		if(n < LENGTH_OF_S) { // return already counted number of 'a' in s
+		if(n <= LENGTH_OF_S) { // return already counted number of 'a' in s
 			return numOfa;
 		}
 		else { // continue ...
 			n_mod_s = n % LENGTH_OF_S;
 		}
 		
-		//
-		if(n_mod_s != 0) {
-			// count number of 'a' in newStr
-			for(int i = 0; i < n_mod_s; i++) {
-				if(s.charAt(i) == 'a') {
-					numOfa++;
-				}
+		
+		
+		// count number of 'a' in newStr
+		for(int i = 0; i < n_mod_s; i++) {
+			if(s.charAt(i) == 'a') {
+				numOfa++;
 			}
-			
-			numOfa = numOfa + n * numOfa / LENGTH_OF_S;
 		}
-		else {
-			numOfa = n * numOfa / LENGTH_OF_S;
-		}
+		
+		numOfa = numOfa + n * numOfa / LENGTH_OF_S;
 		
 		return numOfa;
 	}
