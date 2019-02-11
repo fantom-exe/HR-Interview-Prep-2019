@@ -13,9 +13,16 @@ public class RepeatedString {
 	
 	// Complete the repeatedString function below.
 	static long repeatedString(String s, long n) {
-		final long  LENGTH_OF_S = s.length(),
-					N_MOD_A     = n % LENGTH_OF_S;
+		final long  LENGTH_OF_S = s.length();           // 3
 		int         counter     = 0;
+		long        n_mod_s;
+		
+		if(n > LENGTH_OF_S) {
+			n_mod_s = n % LENGTH_OF_S;
+		}
+		else {
+			n_mod_s = 0;
+		}
 		
 		// count number of 'a' in string s
 		for(int i = 0; i < LENGTH_OF_S; i++) {
@@ -29,18 +36,18 @@ public class RepeatedString {
 		// calculate number of letter 'a' in the first n letters of the repeated string
 		long numOfA = 0;
 		
-		if(N_MOD_A != 0) {
+		if(n_mod_s != 0) {
 //			String newStr = s;
 
-//			if(LENGTH_OF_S < N_MOD_A) { // multiply size of s and copy to newStr
-//				for(int i = 0; i < (1 + N_MOD_A / LENGTH_OF_S); i++) {
+//			if(LENGTH_OF_S < N_MOD_S) { // multiply size of s and copy to newStr
+//				for(int i = 0; i < (1 + N_MOD_S / LENGTH_OF_S); i++) {
 //					newStr += s;
 //				}
 //				System.out.println("YO");
 //			}
 			
 			// count number of 'a' in newStr
-			for(int i = 0; i < N_MOD_A; i++) {
+			for(int i = 0; i < n_mod_s; i++) {
 				if(s.charAt(i) == 'a') {
 					numOfA++;
 				}
