@@ -23,6 +23,8 @@ public class RepeatedString {
 			}
 		}
 		
+		
+		
 		if(n <= LENGTH_OF_S) { // return already counted number of 'a' in s
 			return numOfa;
 		}
