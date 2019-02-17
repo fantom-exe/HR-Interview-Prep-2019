@@ -13,7 +13,30 @@ public class TwoDArrayDS {
 	
 	// Complete the hourglassSum function below.
 	static int hourglassSum(int[][] arr) {
-	
+		int currHourglassSum = 0, maxHourglassSum = 0;
+		
+		for(int i = 0, c = 1; i < 3; i++, c++) { // ROW of entire array
+			
+			// hourglass
+			for(int t = i, b = t+2; t < 3 && b < 6; t++, b++) { // top & bottom ROWS
+				
+				maxHourglassSum += arr[t][c]; // calc top
+				
+				maxHourglassSum += arr[b][c]; // calc bottom
+				
+				for(int m = 1, c = 0; m < 6; m++) { // hourglass middle
+					maxHourglassSum += arr[b][c];
+				}
+				
+			}
+			
+			// determine max sum
+			if(currHourglassSum >= maxHourglassSum) {
+				maxHourglassSum = currHourglassSum;
+			}
+		}
+		
+		return maxHourglassSum;
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
