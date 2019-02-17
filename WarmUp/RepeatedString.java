@@ -25,7 +25,7 @@ public class RepeatedString {
 		}
 		
 		// number of 'a' in string s * number of times string is repeated
-		numOfa += numOfa * (n / LENGTH_OF_S);
+		numOfa = numOfa * (n / LENGTH_OF_S);
 		
 		// n divides into length of s with no remainder
 		if(n_mod_s == 0) {
