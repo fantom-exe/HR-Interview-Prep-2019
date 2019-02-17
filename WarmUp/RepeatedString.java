@@ -26,7 +26,7 @@ public class RepeatedString {
 		
 		//
 		if(n_mod_s == 0) { // n divides into s.length with no remainder
-			numOfa = numOfa * (n / LENGTH_OF_S);
+			numOfa += numOfa * (n / LENGTH_OF_S);
 			
 			return numOfa;
 		}
