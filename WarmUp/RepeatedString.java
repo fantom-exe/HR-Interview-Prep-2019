@@ -24,10 +24,11 @@ public class RepeatedString {
 			}
 		}
 		
-		//
-		if(n_mod_s == 0) { // n divides into s.length with no remainder
-			numOfa += numOfa * (n / LENGTH_OF_S);
-			
+		// number of 'a' in string s * number of times string is repeated
+		numOfa += numOfa * (n / LENGTH_OF_S);
+		
+		// n divides into length of s with no remainder
+		if(n_mod_s == 0) {
 			return numOfa;
 		}
 		
