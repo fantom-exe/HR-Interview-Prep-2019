@@ -18,20 +18,31 @@ public class TwoDArrayDS {
 		for(int r = 0; r < 4; r++) { // array ROWs
 			for(int c = 0; c < 4; c++) { // array COLs
 				// hourglass
-				for(int t = r, b = t+2, i = c; i < c+2; i++) { // top & bottom COLs
+				for(int t = r, b = t+2, i = c; i < c+3; i++) { // top & bottom COLs
 					
 					currHourglassSum += arr[t][i]; // add top
 					
 					currHourglassSum += arr[b][i]; // add bottom
 					
+					
+					System.out.println("t: " + t);
+					System.out.println("b: " + b);
+					
+					System.out.println("arr[t][i]: " + arr[t][i]);
+					System.out.println("arr[b][i]: " + arr[b][i]);
+					
 				}
 				
 				currHourglassSum += arr[r+1][c+1]; // add mid
+				
+				System.out.println("arr[r+1][c+1]: " + arr[r+1][c+1]);
 				
 				// determine max sum
 				if(currHourglassSum >= maxHourglassSum) {
 					maxHourglassSum = currHourglassSum;
 				}
+				
+				System.out.println("currHourglassSum: " + currHourglassSum);
 				
 				// reset currHourglassSum
 				currHourglassSum = 0;
