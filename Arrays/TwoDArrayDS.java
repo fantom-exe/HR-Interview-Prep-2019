@@ -16,27 +16,27 @@ public class TwoDArrayDS {
 		int currHourglassSum = 0, maxHourglassSum = 0;
 		
 		for(int r = 0; r < 4; r++) { // array ROWs
-
 			for(int c = 0; c < 4; c++) { // array COLs
 				// hourglass
-				for(int t = r, b = t+2; c < 3; t++, b++, c++) { // top & bottom COLs
+				for(int t = r, b = t+2, i = c; i < c+2; i++) { // top & bottom COLs
 					
-					currHourglassSum += arr[t][m]; // add top
+					currHourglassSum += arr[t][i]; // add top
 					
-					currHourglassSum += arr[b][m]; // add bottom
+					currHourglassSum += arr[b][i]; // add bottom
 					
 				}
 				
 				currHourglassSum += arr[r+1][c+1]; // add mid
+				
+				// determine max sum
+				if(currHourglassSum >= maxHourglassSum) {
+					maxHourglassSum = currHourglassSum;
+				}
+				
+				// reset currHourglassSum
+				currHourglassSum = 0;
 			}
 			
-			// determine max sum
-			if(currHourglassSum >= maxHourglassSum) {
-				maxHourglassSum = currHourglassSum;
-			}
-			
-			// reset currHourglassSum
-			currHourglassSum = 0;
 		}
 		
 		return maxHourglassSum;
