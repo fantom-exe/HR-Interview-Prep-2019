@@ -37,12 +37,18 @@ public class TwoDArrayDS {
 				
 				System.out.println("arr[r+1][c+1]: " + arr[r+1][c+1]);
 				
+				// first run only
+				if(r == 0 && c == 0) {
+					maxHourglassSum = currHourglassSum;
+				}
+				
 				// determine max sum
 				if(currHourglassSum >= maxHourglassSum) {
 					maxHourglassSum = currHourglassSum;
 				}
 				
-				System.out.println("currHourglassSum: " + currHourglassSum);
+				System.out.println("\ncurrHourglassSum: " + currHourglassSum);
+				System.out.println("maxHourglassSum: " + maxHourglassSum + "\n");
 				
 				// reset currHourglassSum
 				currHourglassSum = 0;
