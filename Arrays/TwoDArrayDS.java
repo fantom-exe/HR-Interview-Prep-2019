@@ -45,7 +45,7 @@ public class TwoDArrayDS {
 	private static final Scanner scanner = new Scanner(System.in);
 	
 	public static void main(String[] args) throws IOException {
-		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+//		BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 		
 		int[][] arr = new int[6][6];
 		
@@ -60,11 +60,12 @@ public class TwoDArrayDS {
 		}
 		
 		int result = hourglassSum(arr);
+		System.out.println(result);
 		
-		bufferedWriter.write(String.valueOf(result));
-		bufferedWriter.newLine();
-		
-		bufferedWriter.close();
+//		bufferedWriter.write(String.valueOf(result));
+//		bufferedWriter.newLine();
+//
+//		bufferedWriter.close();
 		
 		scanner.close();
 	}
