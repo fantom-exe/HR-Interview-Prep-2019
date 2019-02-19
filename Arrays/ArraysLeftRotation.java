@@ -22,8 +22,11 @@ public class ArraysLeftRotation {
 			i++;
 		}
 		
-		
-		
+		// copy
+		while(i < a.length) {
+			newarr[i] = a[i];
+			i++;
+		}
 		
 		return newarr;
 	}
