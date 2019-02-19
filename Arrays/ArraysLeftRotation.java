@@ -13,7 +13,19 @@ public class ArraysLeftRotation {
 	
 	// Complete the rotLeft function below.
 	static int[] rotLeft(int[] a, int d) {
-	
+		int[] newarr = new int[a.length];
+		int i = 0; // index
+		
+		// copy array a items from a[d] to a[a.length-1]
+		while(i+d < a.length) {
+			newarr[i] = a[i+d];
+			i++;
+		}
+		
+		
+		
+		
+		return newarr;
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
