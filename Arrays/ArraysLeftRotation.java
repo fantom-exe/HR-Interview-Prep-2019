@@ -55,7 +55,7 @@ public class ArraysLeftRotation {
 		int[] result = rotLeft(a, d);
 		
 		for(int i1 : result) {
-			System.out.println(i1);
+			System.out.print(i1 + " ");
 		}
 		
 //		bufferedWriter.newLine();
