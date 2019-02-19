@@ -21,7 +21,7 @@ public class ArraysLeftRotation {
 			newArr[i] = a[i+d];
 		}
 		
-		// copy 
+		// copy array a items from a[0] to a[a.length-d]
 		for(int j = 0; i < a.length; j++, i++) {
 			newArr[i] = a[j];
 		}
