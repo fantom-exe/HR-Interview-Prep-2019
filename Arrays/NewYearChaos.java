@@ -13,19 +13,30 @@ public class NewYearChaos {
 	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
-		int person, nextPerson, briber;
+		boolean chaotic = false;
+		int person, nextPerson, briber, numOfBribes;
 		
-		for(int i = 0; i < q.length; i++) {
+		for(int i = 0; i < q.length-1; i++) {
 			person = q[i];
 			nextPerson = q[i+1];
 			
-			if(person+1 != nextPerson) { // bribe occurred
+			if(person+1 != nextPerson) { // possible bribe
 				briber = nextPerson;
 				
+				if(briber+1 == ) {
 				
+				}
+			}
+			
+			if() {
 			}
 		}
 		
+		System.out.println(numOfBribes);
+		
+		if() { // chaotic
+			System.out.println( );
+		}
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
