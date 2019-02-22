@@ -13,6 +13,18 @@ public class NewYearChaos {
 	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
+		int person, nextPerson, briber;
+		
+		for(int i = 0; i < q.length; i++) {
+			person = q[i];
+			nextPerson = q[i+1];
+			
+			if(person+1 != nextPerson) { // bribe occurred
+				briber = nextPerson;
+				
+				
+			}
+		}
 		
 	}
 	
