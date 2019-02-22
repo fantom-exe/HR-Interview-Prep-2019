@@ -14,7 +14,7 @@ public class NewYearChaos {
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
 		boolean chaotic = false;
-		int person, nextPerson, briber, numOfBribes;
+		int person, nextPerson, briber, numOfBribes = 0;
 		
 		for(int i = 0; i < q.length-1; i++) {
 			person = q[i];
@@ -22,6 +22,7 @@ public class NewYearChaos {
 			
 			if(person+1 != nextPerson) { // possible bribe
 				briber = nextPerson;
+				numOfBribes++;
 				
 				if(briber+1 == ) {
 				
@@ -29,13 +30,14 @@ public class NewYearChaos {
 			}
 			
 			if() {
+				chaotic = true;
 			}
 		}
 		
 		System.out.println(numOfBribes);
 		
-		if() { // chaotic
-			System.out.println( );
+		if(chaotic) { // chaotic
+			System.out.println("Too chaotic");
 		}
 	}
 	
