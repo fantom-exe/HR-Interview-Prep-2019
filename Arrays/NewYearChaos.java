@@ -11,10 +11,12 @@ import java.util.regex.*;
 
 public class NewYearChaos {
 	
+	static boolean chaotic = false;
+	static int numOfBribes = 0;
+	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
-		boolean chaotic = false;
-		int person, nextPerson, briber, numOfBribes = 0;
+		int person, nextPerson, briber;
 		
 		for(int i = 0; i < q.length-1; i++) {
 			person = q[i];
@@ -34,11 +36,6 @@ public class NewYearChaos {
 			}
 		}
 		
-		System.out.println(numOfBribes);
-		
-		if(chaotic) { // chaotic
-			System.out.println("Too chaotic");
-		}
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
@@ -62,6 +59,13 @@ public class NewYearChaos {
 			}
 			
 			minimumBribes(q);
+		}
+		
+		// outputs
+		System.out.println(numOfBribes);
+		
+		if(chaotic) { // chaotic
+			System.out.println("Too chaotic");
 		}
 		
 		scanner.close();
