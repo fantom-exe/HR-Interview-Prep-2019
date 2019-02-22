@@ -11,15 +11,15 @@ import java.util.regex.*;
 
 public class NewYearChaos {
 	
-	static boolean chaotic = false;
-	static int numOfBribes = 0;
+	private static boolean chaotic = false;
+	private static int numOfBribes = 0;
 	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
 		int person, nextPerson, briber;
 		
 		for(int i = 0; i < q.length-1; i++) {
-			person = q[i];
+			person     = q[i];
 			nextPerson = q[i+1];
 			
 			if(person+1 != nextPerson) { // possible bribe
