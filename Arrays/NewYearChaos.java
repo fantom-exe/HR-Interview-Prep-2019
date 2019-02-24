@@ -12,28 +12,30 @@ import java.util.regex.*;
 public class NewYearChaos {
 	
 	private static boolean chaotic = false;
-	private static int numOfBribes = 0;
+	private static int totalBribes = 0;
 	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
-		int person, nextPerson, briber;
+		int person, nextPerson, briber, currentBribes = 0;
 		
-		for(int i = 0; i < q.length-1; i++) {
+		for(int i = 0; i < q.length-1; i++) { // queue counter
 			person     = q[i];
 			nextPerson = q[i+1];
 			
-			if(person+1 != nextPerson) { // possible bribe
-				briber = nextPerson;
-				numOfBribes++;
-				
-				if(briber+1 == ) {
-				
+			for(int j = 0; j < ; j++) { // bribe counter
+				if(person+1 != nextPerson) {
+					if(person-1 == nextPerson) { // bribe occurred
+						currentBribes++;
+						totalBribes++;
+					}
+					
+					if(currentBribes > 2) {
+						chaotic = true;
+					}
 				}
 			}
 			
-			if() {
-				chaotic = true;
-			}
+			currentBribes = 0; // reset temp bribe counter
 		}
 		
 	}
