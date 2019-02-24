@@ -33,22 +33,27 @@ public class NewYearChaos {
 				
 				if(currentBribes > 2) { // more than 2 bribes
 					chaotic = true;
+					currentBribes = 0; // reset bribe counter
 					break;
 				}
 				else if(person > nextPerson) { // bribe occurred
 					currentBribes++;
+					
+					if(person-1 == nextPerson) {
+						break;
+					}
 				}
 				
-			}
+			} // END for - bribe counter
 			
-			if(currentBribes > 2) { // more than 2 bribes
-				chaotic = true;
+			if(!chaotic) {
+				totalBribes += currentBribes;
+			}
+			else {
 				break;
 			}
 			
-			totalBribes += currentBribes;
-			currentBribes = 0; // reset temp bribe counter
-		}
+		} // END for
 		
 	}
 	
