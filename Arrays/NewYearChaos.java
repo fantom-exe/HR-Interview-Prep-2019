@@ -11,7 +11,6 @@ import java.util.regex.*;
 
 public class NewYearChaos {
 	
-	private static boolean chaotic       = false;
 	private static int     minimumBribes = 0;
 	
 	// Complete the minimumBribes function below.
@@ -35,14 +34,6 @@ public class NewYearChaos {
 					break;
 				}
 				
-				System.out.println("person: " + person);
-				System.out.println("nextPerson: " + nextPerson);
-				
-				System.out.println("**tempBribes: " + tempBribes);
-				System.out.println("**totalBribes: " + totalBribes);
-				System.out.println("wasChaotic: " + wasChaotic);
-				System.out.println();
-				
 			} // END for - bribe counter
 			
 			totalBribes += tempBribes;
@@ -52,9 +43,10 @@ public class NewYearChaos {
 		
 		if(!wasChaotic) {
 			minimumBribes += totalBribes;
+			System.out.println(minimumBribes);
 		}
 		else {
-			chaotic = true;
+			System.out.println("Too chaotic");
 		}
 	}
 	
@@ -79,13 +71,6 @@ public class NewYearChaos {
 			}
 			
 			minimumBribes(q);
-		}
-		
-		// outputs
-		System.out.println(minimumBribes);
-		
-		if(chaotic) { // chaotic
-			System.out.println("Too chaotic");
 		}
 		
 		scanner.close();
