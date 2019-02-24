@@ -11,15 +11,16 @@ import java.util.regex.*;
 
 public class NewYearChaos {
 	
-	private static boolean chaotic = false;
-	private static int totalBribes = 0;
+	private static boolean chaotic       = false;
+	private static int     minimumBribes = 0;
 	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
-		int person, nextPerson, currentBribes = 0;
+		int person, nextPerson, tempBribes, totalBribes = 0;
 		
 		for(int i = 0; i < q.length-1; i++) { // queue counter
 			person = q[i];
+			tempBribes = 0; // reset bribe counter
 			
 			for(int j = i+1; j < q.length; j++) { // bribe counter
 				nextPerson = q[j];
@@ -27,19 +28,18 @@ public class NewYearChaos {
 				System.out.println("person: " + person);
 				System.out.println("nextPerson: " + nextPerson);
 				
-				System.out.println("**currentBribes: " + currentBribes);
+				System.out.println("**tempBribes: " + tempBribes);
 				System.out.println("**totalBribes: " + totalBribes);
 				System.out.println();
 				
-				if(currentBribes > 2) { // more than 2 bribes
+				if(tempBribes > 2) { // more than 2 bribes
 					chaotic = true;
-					currentBribes = 0; // reset bribe counter
 					break;
 				}
 				else if(person > nextPerson) { // bribe occurred
-					currentBribes++;
+					tempBribes++;
 					
-					if(person-1 == nextPerson) {
+					if(person-1 == nextPerson) { // for efficiency
 						break;
 					}
 				}
@@ -47,7 +47,7 @@ public class NewYearChaos {
 			} // END for - bribe counter
 			
 			if(!chaotic) {
-				totalBribes += currentBribes;
+				totalBribes += tempBribes;
 			}
 			else {
 				break;
@@ -55,6 +55,7 @@ public class NewYearChaos {
 			
 		} // END for
 		
+		minimumBribes += totalBribes;
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
@@ -81,7 +82,7 @@ public class NewYearChaos {
 		}
 		
 		// outputs
-		System.out.println(totalBribes);
+		System.out.println(minimumBribes);
 		
 		if(chaotic) { // chaotic
 			System.out.println("Too chaotic");
