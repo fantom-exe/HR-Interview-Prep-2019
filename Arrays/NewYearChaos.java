@@ -22,14 +22,14 @@ public class NewYearChaos {
 			person     = q[i];
 			nextPerson = q[i+1];
 			
-			for(int j = 0; j < ; j++) { // bribe counter
+			for(int j = i; j < q.length; j++) { // bribe counter
 				if(person+1 != nextPerson) {
 					if(person-1 == nextPerson) { // bribe occurred
 						currentBribes++;
 						totalBribes++;
 					}
 					
-					if(currentBribes > 2) {
+					if(currentBribes > 2) { // more than 2 bribes
 						chaotic = true;
 					}
 				}
@@ -64,7 +64,7 @@ public class NewYearChaos {
 		}
 		
 		// outputs
-		System.out.println(numOfBribes);
+		System.out.println(totalBribes);
 		
 		if(chaotic) { // chaotic
 			System.out.println("Too chaotic");
