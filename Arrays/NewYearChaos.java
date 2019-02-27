@@ -31,10 +31,7 @@ public class NewYearChaos {
 						break;
 					}
 				}
-				else { // no bribe occurred
-					break;
-				}
-				
+			
 			} // END for - bribe counter
 			
 			if(!wasChaotic) {
