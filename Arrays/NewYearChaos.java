@@ -13,7 +13,7 @@ public class NewYearChaos {
 	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
-		int person, nextPerson, tempBribes = 0, totalBribes = 0, minimumBribes = 0;
+		int person, nextPerson, tempBribes = 0, totalBribes = 0, minimumBribes;
 		boolean wasChaotic = false;
 		
 		for(int i = 0; i < q.length-1; i++) { // queue counter
@@ -31,6 +31,9 @@ public class NewYearChaos {
 						break;
 					}
 				}
+				else { // no bribe occurred
+					break;
+				}
 				
 			} // END for - bribe counter
 			
@@ -46,7 +49,7 @@ public class NewYearChaos {
 		} // END for
 		
 		if(!wasChaotic) {
-			minimumBribes += totalBribes;
+			minimumBribes = totalBribes;
 			System.out.println(minimumBribes);
 		}
 		
