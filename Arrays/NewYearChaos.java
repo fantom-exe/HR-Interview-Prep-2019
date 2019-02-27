@@ -34,14 +34,12 @@ public class NewYearChaos {
 			
 			} // END for - bribe counter
 			
-			if(!wasChaotic) {
-				totalBribes += tempBribes;
-				tempBribes = 0; // reset bribe counter
-			}
-			else {
+			if(wasChaotic) {
 				System.out.println("Too chaotic");
 				break;
 			}
+			totalBribes += tempBribes;
+			tempBribes = 0; // reset bribe counter
 			
 		} // END for
 		
