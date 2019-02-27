@@ -25,28 +25,31 @@ public class NewYearChaos {
 				nextPerson = q[j];
 				
 				if(person > nextPerson) { // bribe occurred
-					tempBribes++;
-				}
-				
-				if(tempBribes > 2) { // more than 2 bribes
-					wasChaotic = true;
-					tempBribes = 0; // reset bribe counter
-					break;
+					tempBribes += 1;
+					
+					if(tempBribes > 2) { // more than 2 bribes
+						wasChaotic = true;
+						tempBribes = 0; // reset bribe counter
+						break;
+					}
 				}
 				
 			} // END for - bribe counter
 			
-			totalBribes += tempBribes;
-			tempBribes = 0; // reset bribe counter
+			if(!wasChaotic) {
+				totalBribes += tempBribes;
+				tempBribes = 0; // reset bribe counter
+			}
+			else {
+				System.out.println("Too chaotic");
+				break;
+			}
 			
 		} // END for
 		
 		if(!wasChaotic) {
 			minimumBribes += totalBribes;
 			System.out.println(minimumBribes);
-		}
-		else {
-			System.out.println("Too chaotic");
 		}
 	}
 	
