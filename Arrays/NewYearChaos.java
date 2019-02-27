@@ -11,11 +11,9 @@ import java.util.regex.*;
 
 public class NewYearChaos {
 	
-	private static int     minimumBribes = 0;
-	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
-		int person, nextPerson, tempBribes = 0, totalBribes = 0;
+		int person, nextPerson, tempBribes = 0, totalBribes = 0, minimumBribes = 0;
 		boolean wasChaotic = false;
 		
 		for(int i = 0; i < q.length-1; i++) { // queue counter
@@ -51,6 +49,7 @@ public class NewYearChaos {
 			minimumBribes += totalBribes;
 			System.out.println(minimumBribes);
 		}
+		
 	}
 	
 	private static final Scanner scanner = new Scanner(System.in);
