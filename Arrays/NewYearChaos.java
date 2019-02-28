@@ -30,9 +30,9 @@ public class NewYearChaos {
 						break;
 					}
 				}
-				else if(person + 1 == nextPerson) {
-					break;
-				}
+//				else if(person + 1 == nextPerson) {
+//					break;
+//				}
 			
 			} // END for - bribe counter
 			
