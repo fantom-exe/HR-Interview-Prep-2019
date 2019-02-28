@@ -30,12 +30,8 @@ public class NewYearChaos {
 						break;
 					}
 				}
-				else { // if(person < nextPerson)
-					noBribes += 1;
+				else if(person + 1 == nextPerson) {
 					
-					if(noBribes >= 2) { // more than 2 bribes
-						break;
-					}
 				}
 			
 			} // END for - bribe counter
