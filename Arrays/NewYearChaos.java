@@ -13,40 +13,27 @@ public class NewYearChaos {
 	
 	// Complete the minimumBribes function below.
 	static void minimumBribes(int[] q) {
-		int person, nextPerson, tempBribes = 0, totalBribes = 0, minimumBribes;
-		boolean wasChaotic = false;
+		int person, bribe, minimumBribes = 0;
+		boolean isChaotic = false;
 		
-		for(int i = 0; i < q.length-1; i++) { // queue counter
+		for(int i = 0; i < q.length; i++) { // queue counter
 			person = q[i];
+			bribe  = person - (i+1);
 			
-			for(int j = i+1; j < q.length; j++) { // bribe counter
-				nextPerson = q[j];
-				
-				if(person > nextPerson) { // bribe occurred
-					tempBribes += 1;
-					
-					if(tempBribes > 2) { // more than 2 bribes
-						wasChaotic = true;
-						break;
-					}
-				}
-//				else if(person + 1 == nextPerson) {
-//					break;
-//				}
-			
-			} // END for - bribe counter
-			
-			if(wasChaotic) {
-				System.out.println("Too chaotic");
+			if(bribe > 2) { // too chaotic
+				isChaotic = true;
 				break;
 			}
-			totalBribes += tempBribes;
-			tempBribes = 0; // reset bribe counter
+			else if(bribe >= 0) {
+				minimumBribes += bribe;
+			}
 			
 		} // END for
 		
-		if(!wasChaotic) {
-			minimumBribes = totalBribes;
+		if(isChaotic) {
+			System.out.println("Too chaotic");
+		}
+		else {
 			System.out.println(minimumBribes);
 		}
 		
